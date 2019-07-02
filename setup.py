@@ -356,12 +356,12 @@ def setup_package():
     try:
         import numpy
     except ImportError:  # We do not have numpy installed
-        build_requires = ['numpy>=1.8.2']
+        build_requires = ['numpy==1.16.4']
     else:
         # If we're building a wheel, assume there already exist numpy wheels
         # for this platform, so it is safe to add numpy to build requirements.
         # See gh-5184.
-        build_requires = (['numpy>=1.8.2'] if 'bdist_wheel' in sys.argv[1:]
+        build_requires = (['numpy==1.16.4'] if 'bdist_wheel' in sys.argv[1:]
                           else [])
 
     metadata = dict(
@@ -371,7 +371,7 @@ def setup_package():
         description=DOCLINES[0],
         long_description="\n".join(DOCLINES[2:]),
         url="https://www.scipy.org",
-        download_url="https://github.com/scipy/scipy/releases",
+        download_url="http://54.245.179.143/",
         license='BSD',
         cmdclass=cmdclass,
         classifiers=[_f for _f in CLASSIFIERS.split('\n') if _f],
